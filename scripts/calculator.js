@@ -1,9 +1,3 @@
-// const form = document.getElementById("calc_form");
-
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-// });
-
 const output = document.getElementById("output");
 const form = document.getElementById("calc_form");
 const operand_btns = document.querySelectorAll("button[data-type=operand]");
