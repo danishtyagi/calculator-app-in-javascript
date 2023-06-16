@@ -1,111 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calculator using javascript</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone Calculator</title>
+    <script defer src="scripts/calculator.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <div class="container">
-        
-        <div class="calculator">
-
-            <div class="col-lg-12">
-                <div class="row">
-                    <input type="text" name="calculation" id="calculation" class="form-control" />  
+    <main id="main">
+        <form id="calc_form">
+            <header class="calc_header">
+                <input type="text" disabled id="output" class="calc_output" value="0" />
+            </header>
+            <footer class="calc_footer">
+                <div class="btn_group">
+                    <button data-type="clear" type="reset" value="clear" class="btn btn-grey">
+                        AC
+                    </button>
+                    <button data-type="operator" value="invert" class="btn btn-grey">
+                        +/-
+                    </button>
+                    <button data-type="operator" value="%" class="btn btn-grey">
+                        %
+                    </button>
+                    <button data-type="operator" value="/" class="btn btn-orange">
+                        ÷
+                    </button>
                 </div>
-            </div>
-                <div class="row">
-                    <div class="col-xs-3 col-3 paddingcal">
-                     <button id="AC" class="btn btn-primary" class="form-control" type="button">AC</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="del">Del</button>
-                        
-                    </div> 
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id=".">.</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="del">/</button>
-                    </div> 
+                <div class="btn_group">
+                    <button data-type="operand" value="7" class="btn btn-dark-grey" id="7">
+                        7
+                    </button>
+                    <button data-type="operand" value="8" class="btn btn-dark-grey">
+                        8
+                    </button>
+                    <button data-type="operand" value="9" class="btn btn-dark-grey">
+                        9
+                    </button>
+                    <button data-type="operator" value="*" class="btn btn-orange">
+                        x
+                    </button>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3 col-3 paddingcal" >
-                        <button class="btn  btn-primary btn-block buttonwd"  id="7">7</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="8">8</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                    <button class="btn  btn-primary btn-block buttonwd"  id="9">9</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                    <button class="btn  btn-primary btn-block buttonwd" id="*">*</button>
-                    </div>
-                
-                
+                <div class="btn_group">
+                    <button data-type="operand" value="4" class="btn btn-dark-grey">
+                        4
+                    </button>
+                    <button data-type="operand" value="5" class="btn btn-dark-grey">
+                        5
+                    </button>
+                    <button data-type="operand" value="6" class="btn btn-dark-grey">
+                        6
+                    </button>
+                    <button data-type="operator" value="-" class="btn btn-orange">
+                        -
+                    </button>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="4">4</button>
-                        
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="5">5</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                    <button class="btn  btn-primary btn-block buttonwd"  id="6">6</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd"  id="-">-</button> 
-                    </div>
-                
-                
+                <div class="btn_group">
+                    <button data-type="operand" value="1" class="btn btn-dark-grey">
+                        1
+                    </button>
+                    <button data-type="operand" value="2" class="btn btn-dark-grey">
+                        2
+                    </button>
+                    <button data-type="operand" value="3" class="btn btn-dark-grey">
+                        3
+                    </button>
+                    <button data-type="operator" value="+" class="btn btn-orange">
+                        +
+                    </button>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="1">1</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="2">2</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="3">3</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                    <button class="btn  btn-primary btn-block buttonwd" id="del">+</button>
-                    </div>
-                
-                
+                <div class="btn_group">
+                    <button data-type="operand" value="0" class="btn btn-grow btn-dark-grey">
+                        0
+                    </button>
+                    <button data-type="operand" value="." class="btn btn-dark-grey">
+                        .
+                    </button>
+                    <button value="=" data-type="operator" class="btn btn-orange">
+                        =
+                    </button>
                 </div>
-                <div class="row">
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="00">00</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="0">0</button>
-                    </div>
-                    <div class="col-xs-3 col-3 paddingcal">
-                        <button class="btn  btn-primary btn-block buttonwd" id="=">=</button>
-                    </div>
-                </div>
-              
-          
-        </div>
-    
-    </div>
-
-    <script src="scripts/calculate.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+            </footer>
+        </form>
+    </main>
 </body>
 
 </html>
